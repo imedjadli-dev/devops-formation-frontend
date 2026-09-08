@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './facture.component.html',
   styleUrls: ['./facture.component.css'],
   standalone: true,
-imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule],
 })
 export class FactureComponent implements OnInit {
 
@@ -19,23 +19,28 @@ export class FactureComponent implements OnInit {
   facture!: Facture;
   closeResult!: string;
 
-  constructor(private factureService: FactureService, private modalService: NgbModal) {
-  }
+  constructor(
+    private factureService: FactureService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
     this.getAllFactures();
+
     this.facture = {
-      idFacture:null,
-      dateCreationFacture:null,
-      montantFacture:null,
-      dateDerniereModificationFacture:null,
-      montantRemise:null,
-      archivee:null
-    }
+      idFacture: null,
+      dateCreationFacture: null,
+      montantFacture: null,
+      dateDerniereModificationFacture: null,
+      montantRemise: null,
+      archivee: null
+    };
   }
 
   getAllFactures() {
-    this.factureService.getAllFactures().subscribe(res => this.listFactures = res)
+    this.factureService
+      .getAllFactures()
+      .subscribe(res => this.listFactures = res);
   }
 
   addFacture(f: any) {
@@ -46,11 +51,16 @@ export class FactureComponent implements OnInit {
   }
 
   open(content: any) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        result => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        reason => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
   }
 
   private getDismissReason(reason: any): string {
