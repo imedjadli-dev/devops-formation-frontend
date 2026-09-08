@@ -68,7 +68,8 @@
           "options": {
             "tsConfig": "tsconfig.spec.json",
             "buildTarget": "::development",
-            "runner": "vitest"
+            "runner": "vitest",
+            "reporters": ["default", ["junit", { "outputFile": "test-results/junit.xml" }]]
           }
         }
       }
