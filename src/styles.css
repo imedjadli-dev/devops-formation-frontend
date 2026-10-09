@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
+@import '@fontsource-variable/inter';
 :root {
   --primary: #4f46e5;
   --primary-dark: #4338ca;
@@ -13,16 +12,18 @@ body {
   color: #1f2937;
 }
 
-h4, h5 {
+h4,
+h5 {
   font-weight: 600;
   color: #111827;
 }
 .navbar {
   background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.navbar a, .navbar-brand {
+.navbar a,
+.navbar-brand {
   color: white !important;
   font-weight: 500;
 }
@@ -33,7 +34,9 @@ h4, h5 {
 .table-container {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.08);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   padding: 1rem;
 }
@@ -59,7 +62,8 @@ table td {
 
 table tr:hover {
   background-color: #f9fafb;
-}.btn-primary {
+}
+.btn-primary {
   background-color: var(--primary);
   border: none;
   border-radius: 8px;
