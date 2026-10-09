@@ -32,8 +32,7 @@ scrape_configs:
       - targets: ['host.docker.internal:8080']
 
   - job_name: 'frontend-achat-app'
-    metrics_path: '/metrics'
     static_configs:
-      - targets: ['host.docker.internal:4200']
+      - targets: ['host.docker.internal:9113']
         labels:
           application: 'frontend-achat-app'
